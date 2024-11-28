@@ -1,0 +1,128 @@
+/* Mobile-First styles */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: "Montserrat", serif;
+    color: #333333;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 56px;
+    padding-left: 16px;
+    padding-right: 19px;
+}
+
+.header__menu {
+    display: none;
+}
+
+.header__btn {
+    display: none;
+}
+
+.header__burger-btn {
+    width: 40px;
+    min-height: 40px;
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.header-line {
+    display: flex;
+    width: 100%;
+    height: 1px;
+    color: #EFF5FB;
+}
+
+.main {
+    margin-top: 24px;
+    margin-bottom: 59px;
+}
+
+.breadcrumb__list {
+    display: flex;
+}
+
+.breadcrumb__item {
+    list-style: none;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+    cursor: pointer;
+}
+
+.main__header {
+    margin-top: 24px;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.articles-filter {
+    display: flex;
+    margin-top: 24px;
+    gap: 8px;
+    overflow-x: auto;
+    scrollbar-width: none;
+}
+
+.articles-filter__item {
+    white-space: nowrap;
+    border: 1px solid #C1C5CD;
+    border-radius: 24px;
+    padding: 6px 8px;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 20px;
+    cursor: pointer;
+}
+
+.articles-section {
+    margin-top: 24px;
+}
+
+.article {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.article__image {}
+
+.article__body {
+    display: flex;
+    flex-direction: column;
+}
+
+.article__header {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.article__author {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+}
+
+.article__desription {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.article__data {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+}
