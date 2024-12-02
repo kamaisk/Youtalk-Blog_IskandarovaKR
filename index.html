@@ -11,7 +11,7 @@
 <body>
     <header class="header">
         <svg width="48" height="34" viewBox="0 0 48 34" fill="none" xmlns="http://www.w3.org/2000/svg"
-            alt="Логотип Youtalk">
+            alt="Логотип Youtalk" class="header__logo-Youtalk">
             <g clip-path="url(#clip0_4492_1731)">
                 <path
                     d="M12.546 1.20494C12.5461 1.05344 12.5132 0.903771 12.4498 0.766518C12.3863 0.629265 12.2937 0.507778 12.1786 0.410645C11.9484 0.192908 11.644 0.0732538 11.3286 0.0765968C11.1095 0.0730345 10.8938 0.132229 10.7065 0.247332C10.5 0.380162 10.3431 0.578654 10.2607 0.811502L6.34151 9.61057L2.41254 0.794181C2.32646 0.574989 2.17511 0.388217 1.97941 0.259671C1.78371 0.131126 1.55332 0.0671545 1.32007 0.0765968C0.985937 0.0749397 0.662102 0.193339 0.406417 0.410645C0.278927 0.506251 0.17563 0.630963 0.104963 0.774598C0.0342953 0.918232 -0.00173873 1.07672 -0.000196651 1.2371C-0.0015627 1.39462 0.0327913 1.55037 0.100232 1.6924L4.99919 12.2137L3.25026 15.9847C3.17664 16.1459 3.13345 16.3197 3.12289 16.4969C3.12069 16.6455 3.15301 16.7925 3.21725 16.9261C3.28148 17.0598 3.37585 17.1763 3.49276 17.2665C3.72315 17.4639 4.01614 17.571 4.31824 17.5683C4.53993 17.5674 4.75639 17.5002 4.9404 17.3753C5.14128 17.2421 5.29755 17.0506 5.38866 16.826L12.4456 1.6924C12.5124 1.53877 12.5466 1.37272 12.546 1.20494Z"
@@ -91,7 +91,7 @@
         <div class="articles-filter">
             <span class="articles-filter__item">Все</span>
             <span class="articles-filter__item">Самооценка и самопринятие</span>
-            <span class="articles-filter__item">Self</span>
+            <span class="articles-filter__item articles-filter__item-selected">Self</span>
             <span class="articles-filter__item">Чувства и эмоции</span>
             <span class="articles-filter__item">Тревога</span>
             <span class="articles-filter__item">Упражнения</span>
@@ -102,22 +102,34 @@
 
         <section class="articles-section">
             <div class="article">
-                <div class="article__image">
-                    <img src="images/png/article_img1.png" alt="Фото статьи">
+                <div class="article__image-container">
+                    <img src="images/png/article_img1.png" alt="Фото статьи" class="article__image">
+                    <div class="article__filter-overlay">
+                        <span class="article__filter-tag">Самооценка и самопринятие</span>
+                        <span class="article__filter-tag">Self</span>
+                    </div>
                 </div>
                 <div class="article__body">
                     <span class="article__header">Эмоциональное выгорание – стадии и симптомы, методы восстановления и
                         профилактики</span>
                     <span class="article__author">Автор: Лиза Файнтух</span>
                     <span class="article__description">Изначально термин «эмоциональное профессиональной сфере и
-                        относился...</span>
+                        относился
+                        Изначально термин «эмоциональное профессиональной сфере и относился
+                        Изначально термин «эмоциональное профессиональной сфере и относился
+                        Изначально термин «эмоциональное профессиональной сфере и относился
+                        Изначально термин «эмоциональное профессиональной сфере и относился
+                    </span>
                     <span class="article__data">21.08.2021</span>
                 </div>
             </div>
 
             <div class="article">
-                <div class="article__image">
-                    <img src="images/png/article_img2.png" alt="Фото статьи">
+                <div class="article__image-container">
+                    <img src="images/png/article_img2.png" alt="Фото статьи" class="article__image">
+                    <div class="article__filter-overlay">
+                        <span class="article__filter-tag">Self</span>
+                    </div>
                 </div>
                 <div class="article__body">
                     <span class="article__header">Как не утонуть в тревоге и управлять своими страхами</span>
@@ -129,8 +141,12 @@
             </div>
 
             <div class="article">
-                <div class="article__image">
-                    <img src="images/png/article_img3.png" alt="Фото статьи">
+                <div class="article__image-container">
+                    <img src="images/png/article_img3.png" alt="Фото статьи" class="article__image">
+                    <div class="article__filter-overlay">
+                        <span class="article__filter-tag">Самооценка и самопринятие</span>
+                        <span class="article__filter-tag">Психология питания</span>
+                    </div>
                 </div>
                 <div class="article__body">
                     <span class="article__header">Эмоциональное выгорание – стадии и симптомы, методы восстановления и
@@ -143,8 +159,11 @@
             </div>
 
             <div class="article">
-                <div class="article__image">
-                    <img src="images/png/article_img4.png" alt="Фото статьи">
+                <div class="article__image-container">
+                    <img src="images/png/article_img4.png" alt="Фото статьи" class="article__image">
+                    <div class="article__filter-overlay">
+                        <span class="article__filter-tag">Self</span>
+                    </div>
                 </div>
                 <div class="article__body">
                     <span class="article__header">Как не утонуть в тревоге и управлять своими страхами</span>
@@ -156,8 +175,11 @@
             </div>
 
             <div class="article">
-                <div class="article__image">
-                    <img src="images/png/article_img5.png" alt="Фото статьи">
+                <div class="article__image-container">
+                    <img src="images/png/article_img5.png" alt="Фото статьи" class="article__image">
+                    <div class="article__filter-overlay">
+                        <span class="article__filter-tag">Self</span>
+                    </div>
                 </div>
                 <div class="article__body">
                     <span class="article__header">Как управлять своими эмоциями: 8 шагов</span>
@@ -169,8 +191,11 @@
             </div>
 
             <div class="article">
-                <div class="article__image">
-                    <img src="images/png/article_img6.png" alt="Фото статьи">
+                <div class="article__image-container">
+                    <img src="images/png/article_img6.png" alt="Фото статьи" class="article__image">
+                    <div class="article__filter-overlay">
+                        <span class="article__filter-tag">Self</span>
+                    </div>
                 </div>
                 <div class="article__body">
                     <span class="article__header">Эмоциональное выгорание – стадии и симптомы, методы восстановления и
@@ -182,8 +207,11 @@
             </div>
 
             <div class="article">
-                <div class="article__image">
-                    <img src="images/png/article_img7.png" alt="Фото статьи">
+                <div class="article__image-container">
+                    <img src="images/png/article_img7.png" alt="Фото статьи" class="article__image">
+                    <div class="article__filter-overlay">
+                        <span class="article__filter-tag">Self</span>
+                    </div>
                 </div>
                 <div class="article__body">
                     <span class="article__header">Как не утонуть в тревоге и управлять своими страхами</span>
@@ -195,8 +223,11 @@
             </div>
 
             <div class="article">
-                <div class="article__image">
-                    <img src="images/png/article_img8.png" alt="Фото статьи">
+                <div class="article__image-container">
+                    <img src="images/png/article_img8.png" alt="Фото статьи" class="article__image">
+                    <div class="article__filter-overlay">
+                        <span class="article__filter-tag">Self</span>
+                    </div>
                 </div>
                 <div class="article__body">
                     <span class="article__header">Как управлять своими эмоциями: 8 шагов</span>
@@ -208,7 +239,9 @@
             </div>
         </section>
 
-        <button type="button" class="main__btn-more">Ещё</button>
+        <div class="main__btn-more-container">
+            <button type="button" class="main__btn-more">Ещё</button>
+        </div>
     </main>
 
     <footer class="footer">
@@ -232,7 +265,9 @@
         <div class="footer__subscription-section">
             <p class="footer__subscription-description">Одно письмо в неделю со свежими новостями и акциями</p>
             <form class="footer__subscription-form">
+                <!-- <div> -->
                 <input type="email" placeholder="Ваш e-mail" class="footer__subscription-email-input" required>
+                <!-- </div> -->
                 <button type="submit" class="footer__subscription-btn">Стрелка</button>
             </form>
             <p class="footer__subscription-privacy-notice">Подписываясь, я соглашаюсь на обработку персональных данных в
@@ -390,10 +425,10 @@
         <div class="footer__info">
             <div class="footer__copyright">&copy; YouTalk, 2018 – 2022</div>
             <div class="footer__legal-info">
-                <a class="footer__legal-info-link" href="#">Юридические документы</a>
+                <a class="footer__links footer__legal-info-link" href="#">Юридические документы</a>
             </div>
             <div class="footer__payment-methods">
-                <a class="footer__payment-methods-link" href="#">Способы оплаты</a>
+                <a class="footer__links footer__payment-methods-link" href="#">Способы оплаты</a>
             </div>
         </div>
     </footer>
