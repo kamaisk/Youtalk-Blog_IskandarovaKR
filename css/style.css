@@ -187,8 +187,17 @@ img {
     margin-right: 4px;
 }
 
-.articles-filter__item-selected:active {
+.articles-filter__item-selected {
     border: 2px solid #16C8BB;
+}
+
+.articles-filter__item:active {
+    border: 2px solid #16C8BB;
+}
+
+.articles-filter__item:hover {
+    /* border: 2px solid #16C8BB; */
+    box-shadow: #16C8BB 0px 0px 0px 2px inset;
 }
 
 .articles-section {
@@ -298,10 +307,9 @@ img {
 }
 
 .article__data {
-    position: absolute;
-    bottom: 16px;
-    /* align-self: flex-end; */
-    /* margin-top: 8px; */
+    /* position: absolute;
+    bottom: 16px; */
+    margin-top: auto;
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
