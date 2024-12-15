@@ -30,3 +30,18 @@
         url("../fonts/Montserrat_woff/Montserrat-Bold.woff") format("woff");
 }
 
+@font-face {
+    font-family: "Montserrat";
+    font-style: italic;
+    font-weight: 400;
+    src: local("Montserrat") url("../fonts/Montserrat_woff2/Montserrat-Italic.woff2") format("woff2"),
+        url("../fonts/Montserrat_woff/Montserrat-Italic.woff") format("woff");
+}
+
+@font-face {
+    font-family: "Open Sans";
+    font-style: normal;
+    font-weight: 400;
+    src: local("Open Sans") url("../fonts/OpenSans-Regular.woff2") format("woff2"),
+        url("../fonts/OpenSans-Regular.woff") format("woff");
+}

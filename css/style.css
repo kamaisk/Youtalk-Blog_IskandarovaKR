@@ -1,4 +1,5 @@
 /* Mobile-First styles iPhone SE  */
+/* styles for main page */
 
 * {
     box-sizing: border-box;
@@ -7,6 +8,12 @@
     font-family: "Montserrat", serif;
 }
 
+img {
+    display: block;
+    object-fit: cover;
+}
+
+/* styles for header */
 .header {
     display: flex;
     justify-content: space-between;
@@ -16,7 +23,7 @@
     padding-right: 8px;
 }
 
-.header__menu {
+.header__navigation {
     display: none;
     margin-left: 32px;
 }
@@ -38,7 +45,7 @@
 
 .header__item:nth-last-child(2)::after {
     content: ' ';
-    background-image: url("../images/svg/arrow_header.svg");
+    background-image: url("../images/svg/header/arrow_header.svg");
     background-position: center;
     background-repeat: no-repeat;
     margin-top: 2px;
@@ -69,44 +76,54 @@
 }
 
 .header__burger-btn {
-    width: 40px;
-    min-height: 40px;
+    /* width: 40px;
+    min-height: 40px; */
+    padding: 11px;
     border: none;
     background-color: transparent;
     cursor: pointer;
 }
 
 .header-line {
-    display: flex;
+    /* display: flex; */
     width: 100%;
     height: 1px;
     background-color: #EFF5FB;
 }
 
-.main {
-    margin: 24px 16px 59px;
+
+
+/* styles for main-blog */
+.main-blog {
+    margin: 23px 16px 59px;
     color: #333333;
 }
 
-.breadcrumb__list {
+.breadcrumb {
+    grid-area: breadcrumb;
     display: flex;
-    gap: 8px;
+    gap: 28px;
+    white-space: nowrap;
+    overflow: hidden;
 }
 
-.breadcrumb__item {
-    display: flex;
-    align-items: center;
-    list-style: none;
+.breadcrumb__link {
+    /* display: flex; */
+    /* align-items: center; */
+    position: relative;
+    text-decoration: none;
     font-size: 12px;
     line-height: 18px;
     letter-spacing: 0.25px;
     opacity: 0.7;
+    color: #333333;
     cursor: pointer;
 }
 
-.breadcrumb__item:first-child::after {
+.breadcrumb__link::after {
     content: ' ';
     background-image: url("../images/svg/arrow_breadcrumb.svg");
+    position: absolute;
     background-position: center;
     background-repeat: no-repeat;
     width: 16px;
@@ -114,7 +131,19 @@
     margin-left: 4px;
 }
 
-.main__header {
+.breadcrumb__link:last-child::after {
+    display: none;
+}
+
+.breadcrumb__link:last-child {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    flex-shrink: 1;
+    /* max-width: 150px; */
+}
+
+.main-blog__header {
     margin-top: 24px;
     font-weight: 700;
     font-size: 24px;
@@ -134,16 +163,17 @@
     white-space: nowrap;
     border: 1px solid #C1C5CD;
     border-radius: 24px;
-    padding: 6px 8px;
+    padding: 5px 7px;
     font-weight: 600;
     font-size: 14px;
     line-height: 20px;
+    background-color: transparent;
     cursor: pointer;
 }
 
 .articles-filter__item:first-child::before {
     content: ' ';
-    background-image: url("../images/svg/smiley_Smiling\ Face.svg");
+    background-image: url("../images/svg/blog/smiley_Smiling\ Face.svg");
     width: 20px;
     height: 20px;
     margin-right: 4px;
@@ -151,13 +181,13 @@
 
 .articles-filter__item:nth-child(3)::before {
     content: ' ';
-    background-image: url("../images/svg/smiley_Unicorn.svg");
+    background-image: url("../images/svg/blog/smiley_Unicorn.svg");
     width: 20px;
     height: 20px;
     margin-right: 4px;
 }
 
-.articles-filter__item-selected {
+.articles-filter__item-selected:active {
     border: 2px solid #16C8BB;
 }
 
@@ -179,6 +209,8 @@
         "article-image"
         "article-body";
     min-height: 484px;
+    color: #333333;
+    text-decoration: none;
     cursor: pointer;
 }
 
@@ -223,7 +255,7 @@
 
 .article__filter-tag::before {
     content: ' ';
-    background-image: url("../images/svg/smiley_Unicorn.svg");
+    background-image: url("../images/svg/blog/smiley_Unicorn.svg");
     background-position: center;
     width: 20px;
     height: 20px;
@@ -269,7 +301,7 @@
     position: absolute;
     bottom: 16px;
     /* align-self: flex-end; */
-    margin-top: 8px;
+    /* margin-top: 8px; */
     font-weight: 400;
     font-size: 12px;
     line-height: 18px;
@@ -277,13 +309,13 @@
     color: #868686;
 }
 
-.main__btn-more-container {
+.main-blog__btn-more-container {
     display: flex;
     justify-content: center;
     margin-top: 28px;
 }
 
-.main__btn-more {
+.main-blog__btn-more {
     /* min-width: 182px; */
     border: none;
     border-radius: 4px;
@@ -297,27 +329,46 @@
     cursor: pointer;
 }
 
+
+
+/* styles for footer */
 .footer {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: minmax(184px, auto) minmax(200px, auto) minmax(102px, auto) 2px 1fr;
+    grid-template-columns: 18px 1fr 14px;
+    /* grid-template-columns: repeat(3, 1fr); */
+    grid-template-rows: 1fr 2px auto;
     grid-template-areas:
-        "footer__menu footer__menu footer__menu"
-        "footer__subscription-section footer__subscription-section footer__subscription-section"
-        "footer__contact-info footer__contact-info footer__contact-info"
-        "footer__line footer__line footer__line"
-        "footer__info footer__info footer__info";
-    /* min-height: 746px; */
-    padding: 35px 14px 37px 18px;
+        ". footer__section ."
+        ". footer__line ."
+        ". footer__info-block .";
+    padding-top: 35px;
+    padding-bottom: 37px;
+    /* padding: 35px 14px 37px 18px; */
     background-color: #2963A3;
     color: white;
 }
 
+.footer__section {
+    grid-area: footer__section;
+    /* display: flex;
+    flex-direction: column; */
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: repeat(3, auto);
+    /* grid-template-areas: 
+    "footer__menu"
+    "footer__subscription-section"
+    "footer__contact-info" */
+}
+
 .footer__menu {
-    grid-area: footer__menu;
+    /* grid-area: footer__menu; */
     display: flex;
+    justify-content: space-between;
     gap: 71px;
     /* min-width: 288px; */
+    grid-row: 1;
+    grid-column: span 3;
 }
 
 .footer__list {
@@ -326,6 +377,7 @@
     gap: 16px;
     font-weight: 700;
     line-height: 24px;
+    list-style: none;
 }
 
 .footer__link {
@@ -334,7 +386,9 @@
 }
 
 .footer__subscription-section {
-    grid-area: footer__subscription-section;
+    /* grid-area: footer__subscription-section; */
+    grid-row: 2;
+    grid-column: span 3;
     margin-top: 23px;
 }
 
@@ -357,9 +411,10 @@
 }
 
 .footer__subscription-email-input {
-    /* width: 100%; */
+    width: 100%;
     border: none;
     border-radius: 4px;
+    margin-right: 16px;
     margin-left: 16px;
     font-size: 14px;
     line-height: 20px;
@@ -370,6 +425,7 @@
     display: none;
     border: none;
     border-radius: 4px;
+    cursor: pointer;
 }
 
 .footer__subscription-privacy-notice {
@@ -380,12 +436,10 @@
     opacity: 0.7;
 }
 
-/* .footer__links {
-    text-decoration: none;
-} */
-
 .footer__contact-info {
-    grid-area: footer__contact-info;
+    /* grid-area: footer__contact-info; */
+    grid-row: 3;
+    grid-column: span 3;
     margin-top: 5px;
 }
 
@@ -400,7 +454,7 @@
     text-decoration: none;
 }
 
-.footer__social-links {
+.footer__social-icons {
     display: flex;
     justify-content: start;
     align-items: center;
@@ -408,7 +462,7 @@
     margin: 20px 0;
 }
 
-.footer__social-icon {
+.footer__social-link {
     display: inline-flex;
     text-decoration: none;
 }
@@ -419,8 +473,8 @@
     opacity: 0.3;
 }
 
-.footer__info {
-    grid-area: footer__info;
+.footer__info-block {
+    grid-area: footer__info-block;
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -430,10 +484,613 @@
     opacity: 0.7;
 }
 
-.footer__links {
-    color: #FFFFFF;
-    text-decoration: none;
+
+
+
+
+/* styles for main-article */
+.main-article {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 32px 1fr 16px auto;
+    grid-template-areas:
+        "breadcrumb"
+        "."
+        "article-content"
+        "."
+        "aside-block";
+    padding: 15px 16px 60px;
+    color: #333333;
+
 }
+
+.article-content {
+    grid-area: article-content;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.article-content__text {
+    /* margin-top: 8px; */
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.article-content__text-bold {
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.article-content__text-italic {
+    font-style: italic;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.article-content__title {
+    line-height: 32px;
+}
+
+.article-content__title-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-content__info {
+    display: flex;
+    justify-content: flex-start;
+    gap: 4px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    color: #494949;
+}
+
+.article-content__womanInWater-img {
+    margin-top: 16px;
+}
+
+.article-content__content {
+    margin-top: 16px;
+}
+
+.article-content__subtitle {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.article-content__subtitle-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.article-content__filter-link {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2963A3;
+}
+
+.article-content__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    /* position: relative; */
+}
+
+.article-content__item {
+    list-style: none;
+    position: relative;
+    padding-left: 32px;
+}
+
+.article-content__link {
+    font-size: 16px;
+    color: #333333;
+}
+
+/* .article-content__marker {
+    display: flex;
+    position: relative;
+} */
+
+.article-content__item::before {
+    content: ' ';
+    position: absolute;
+    background-color: #03B2A5;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 8px;
+    left: 8px;
+}
+
+.article-content__hidden {
+    display: none;
+}
+
+.article-content__heading1 {
+    margin-left: 16px;
+    font-weight: 500;
+}
+
+.article-content__heading2 {
+    margin-left: 32px;
+    font-weight: 500;
+}
+
+.article-content__heading3 {
+    margin-left: 48px;
+    font-weight: 500;
+}
+
+
+.article-content__quote-container-first {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    position: relative;
+    border-radius: 16px;
+    margin-top: 40px;
+    padding: 26px 16px 16px;
+    background-color: #F3F7FE;
+}
+
+.article-content__quote-container-first::before {
+    content: " ";
+    background-image: url("..//images/svg/article/article-content__quote-first.svg");
+    position: absolute;
+    width: 22.64px;
+    height: 36px;
+    top: 16px;
+}
+
+.article-content__list-subtitle {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.article-content__figcaption-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.article-content__figcaption {
+    margin-top: 16px;
+    font-size: 14px;
+    /* line-height: 130%; */
+    letter-spacing: 0.25px;
+    color: #868686;
+}
+
+.article-content__quote-container-second {
+    display: flex;
+    align-items: end;
+    position: relative;
+    min-height: 176px;
+    text-align: center;
+    /* height: 176px; */
+}
+
+.article-content__quote-container-second::before {
+    content: " ";
+    background-image: url("..//images/svg/article/article-content__quote-second.svg");
+    position: absolute;
+    width: 240px;
+    height: 168px;
+    left: 23.5px;
+    top: 0;
+    z-index: -1;
+}
+
+.article-content__block-womanInGlasses-hands {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.article-content__exercise-block {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    border-radius: 16px;
+    padding: 16px;
+}
+
+.article-content__exercise-1 {
+    background-color: #FEFAEC;
+}
+
+.article-content__exercise-2 {
+    background-color: #FFF3EB;
+}
+
+.article-content__exercise-3 {
+    background-color: rgba(3, 178, 165, 0.1);
+}
+
+.article-content__container-chair-sunset {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.article-content__block-chair-sunset {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.article-content__delimiter {
+    display: flex;
+    justify-content: center;
+    height: 32px;
+}
+
+.article-content__filters {
+    display: none;
+}
+
+.main-article__line {
+    grid-area: main-article__line;
+    display: none;
+}
+
+.aside-block {
+    grid-area: aside-block;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(4, auto);
+    grid-template-areas:
+        "service-Qlick service-Qlick"
+        "psychologist-Lilia psychologist-Lilia"
+        "give-care give-care"
+        "buy-sessions buy-sessions";
+    gap: 24px;
+}
+
+.aside-block__service-Qlick {
+    grid-area: service-Qlick;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 24px 24px 24px 25px;
+    border-radius: 16px;
+    background-color: #E6F0FD;
+}
+
+.aside-block__service-Qlick_img {
+    width: 257px;
+    height: 206px;
+}
+
+/* .aside-block__text-align {
+    text-align: center;
+} */
+
+.aside-block__title {
+    min-height: 54px;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    text-align: center;
+}
+
+.aside-block__text {
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+    text-align: center;
+}
+
+.aside-block__btn {
+    width: 100%;
+    min-height: 48px;
+    border: none;
+    border-radius: 4px;
+    /* padding: 12px auto; */
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+    background-color: #35B3A9;
+    cursor: pointer;
+}
+
+.aside-block__psychologist-Lilia {
+    grid-area: psychologist-Lilia;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    position: relative;
+    padding: 23px 19px 35px;
+    /* box-shadow: 0 0 1px rgba(222, 222, 222); */
+    border: 1px solid #DEDEDE;
+    border-radius: 16px;
+}
+
+.aside-block__psychologist-Lilia_filters {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 8px;
+    position: absolute;
+    top: 16px;
+    left: 16px;
+}
+
+.aside-block__psychologist-Lilia_filter-tag {
+    padding: 3px 6px;
+    border-radius: 6px;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 18px;
+    letter-spacing: 0.25px;
+    background-color: rgba(243, 244, 248, 0.7);
+}
+
+/* .aside-block__psychologist-Lilia_note::before {
+    content: ' ';
+    background-image: url("../images/svg/article/aside-block__psychologist-Lilia_note.svg");
+    width: 16px;
+    height: 24px;
+    margin-right: 4px;
+}
+
+.aside-block__psychologist-Lilia_video::before {
+    content: ' ';
+    background-image: url("../images/svg/article/aside-block__psychologist-Lilia_video.svg");
+    width: 16px;
+    height: 24px;
+    margin-right: 4px;
+} */
+
+.aside-block__psychologist-Lilia_img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+}
+
+.aside-block__psychologist-Lilia_info {
+    text-align: center;
+}
+
+.aside-block__psychologist-Lilia_name {
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 28px;
+}
+
+.aside-block__psychologist-Lilia_profession {
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.aside-block__psychologist-Lilia_experience {
+    display: flex;
+    gap: 8px;
+    margin-top: 4px;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #A2A7B1;
+}
+
+.aside-block__psychologist-Lilia_line {
+    width: 100%;
+    height: 1px;
+    box-shadow: 0 1px 0 rgba(0, 0, 0, 0.1);
+}
+
+.aside-block__psychologist-Lilia_text-block {
+    align-self: stretch;
+    min-height: 112px;
+}
+
+.aside-block__subtitle {
+    font-weight: 700;
+    line-height: 24px;
+}
+
+.aside-block__list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-top: 8px;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+/* .aside-block__item {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    list-style: none;
+}
+
+.aside-block__item::before {
+    content: ' ';
+    background-color: #03B2A5;
+    width: 8px;
+    height: 8px;
+    margin: 6px;
+    border-radius: 50%;
+} */
+
+.aside-block__item {
+    list-style: none;
+    position: relative;
+    padding-left: 24px;
+}
+
+.aside-block__item::before {
+    content: ' ';
+    position: absolute;
+    background-color: #03B2A5;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    top: 6px;
+    left: 6px;
+}
+
+.aside-block__give-care {
+    grid-area: give-care;
+    position: relative;
+    min-height: 292px;
+    border-radius: 16px;
+    background-color: #2963A3;
+    background: linear-gradient(to top, #2963A3, 99%, #FFFFFF);
+    overflow: hidden;
+}
+
+.aside-block__give-care_text {
+    position: absolute;
+    left: 18px;
+    top: 60px;
+    font-weight: 700;
+    font-size: 32px;
+    line-height: 40px;
+    color: #FFFFFF;
+}
+
+.aside-block__give-care_firework-img {
+    position: absolute;
+    left: 2px;
+}
+
+.aside-block__give-care_presents-img {
+    position: absolute;
+    bottom: 0;
+}
+
+.aside-block__buy-sessions {
+    grid-area: buy-sessions;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 16px;
+    position: relative;
+    padding: 15px;
+    /* box-shadow: 0 0 1px rgba(222, 222, 222); */
+    border: 1px solid #DEDEDE;
+    border-radius: 24px;
+    overflow: hidden;
+}
+
+.aside-block__buy-sessions_header {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 700;
+    color: #2963A3;
+}
+
+.aside-block__buy-sessions_heading-number {
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.aside-block__buy-sessions_heading-text {
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.aside-block__buy-sessions-text {
+    font-family: "Open Sans", serif;
+    font-size: 14px;
+    line-height: 20px;
+    color: #011632;
+}
+
+.aside-block__buy-sessions_price {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.aside-block__buy-sessions-btn {
+    width: 108px;
+    cursor: pointer;
+}
+
+.aside-block__buy-sessions_presents-img {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+}
+
+.article-block {
+    grid-area: article-block;
+    display: none;
+}
+
+.article-block__select-specialist-block {
+    width: 348px;
+    height: fit-content;
+}
+
+.article-block__title {
+    font-weight: 700;
+    font-size: 48px;
+    line-height: 56px;
+}
+
+.article-block__text {
+    margin-top: 24px;
+    font-size: 18px;
+    line-height: 26px;
+}
+
+.article-block__btn {
+    border: none;
+    border-radius: 4px;
+    margin-top: 32px;
+    padding: 20px 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: auto;
+    color: #FFFFFF;
+    background-color: #35B3A9;
+    cursor: pointer;
+}
+
+.article-block__select-specialist-img {
+    position: absolute;
+    left: 771px;
+    top: 5269px;
+}
+
+.article-block__smallVector-img {
+    position: absolute;
+    left: 1367px;
+    top: 5269px;
+}
+
+.main-article__fullVector {
+    display: none;
+    position: absolute;
+    top: 5625px;
+    left: 0;
+}
+
+.main-article__bigVector {
+    display: none;
+    position: absolute;
+    /* left: 1908px; */
+    top: 2480px;
+    right: 0;
+}
+
 
 /* iPhone 11 Pro Max */
 @media screen and (min-width: 414px) {
@@ -442,11 +1099,11 @@
         padding: 0 24px;
     }
 
-    .main {
-        margin: 16px 20px 59px;
+    .main-blog {
+        margin: 15px 20px 59px;
     }
 
-    .main__header {
+    .main-blog__header {
         margin-top: 32px;
         font-size: 32px;
         line-height: 40px;
@@ -466,13 +1123,14 @@
     }
 
     .footer {
-        padding: 35px 20px 37px 19px;
+        /* padding: 35px 20px 37px 19px; */
+        grid-template-columns: 19px 1fr 20px;
     }
 
     .footer__menu {
         gap: 158px;
     }
-    
+
     .footer__subscription-btn {
         display: flex;
     }
@@ -480,7 +1138,110 @@
     .footer__contact-info {
         margin-top: 31px;
     }
+
+    .main-article {
+        grid-template-rows: auto 32px 1fr 56px auto;
+        padding: 11px 20px 127px;
+    }
+
+    .article-content {
+        gap: 24px;
+    }
+
+    .article-content__title {
+        min-height: 128px;
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .article-content__info {
+        gap: 8px;
+    }
+
+    .article-content__content {
+        margin-top: 24px;
+    }
+
+    .article-content__list {
+        margin-top: 16px;
+    }
+
+    .article-content__subtitle-container {
+        gap: 16px;
+        margin-top: 24px;
+    }
+
+    .article-content__subtitle {
+        font-size: 24px;
+        line-height: 32px;
+    }
+
+    .article-content__quote-container-first {
+        margin-top: 24px;
+    }
+
+    .article-content__list-subtitle {
+        gap: 16px;
+        margin-top: 16px;
+    }
+
+    .article-content__quote-container-second {
+        min-height: 168px;
+    }
+
+    .article-content__quote-container-second::before {
+        left: 66.5px;
+    }
+
+    .article-content__container-chair-sunset {
+        gap: 24px;
+    }
+
+    .article-content__block-chair-sunset {
+        gap: 16px;
+    }
+
+    .aside-block__service-Qlick {
+        padding: 24px 32px 44px;
+    }
+
+    .article-content__womanInWater-img {
+        height: 207px;
+    }
+
+    .article-content__walkingPeople-img {
+        height: 207px;
+    }
+
+    .article-content__womanInGlasses-img {
+        height: 380px;
+    }
+
+    .article-content__hands-img {
+        height: 207px;
+    }
+
+    .article-content__chair-img {
+        height: 235px;
+    }
+
+    .article-content__womanAtSunset-img {
+        height: 235px;
+    }
+
+    .aside-block__psychologist-Lilia {
+        padding: 23px 62px 35px;
+    }
+
+    .aside-block__give-care_text {
+        left: 61px;
+    }
+
+    .aside-block__buy-sessions {
+        padding: 23px;
+    }
 }
+
 
 
 /* iPad mini */
@@ -495,11 +1256,11 @@
         min-height: 36px;
     }
 
-    .main {
+    .main-blog {
         margin-bottom: 55px;
     }
 
-    .main__header {
+    .main-blog__header {
         margin-top: 40px;
         font-size: 48px;
         line-height: 56px;
@@ -536,18 +1297,157 @@
         max-height: 80px;
     }
 
-    .main__btn-more-container {
+    .main-blog__btn-more-container {
         margin-top: 33px;
     }
 
     .footer {
-        padding: 35px 20px 23px;
+        /* padding: 35px 20px 23px; */
+        grid-template-rows: 1fr 1px auto;
+        grid-template-columns: 20px 1fr 20px;
+        padding-bottom: 23px;
     }
 
     .footer__menu {
+        grid-row: 1 / span 2;
+        grid-column: 1;
         gap: 30px;
     }
+
+    .footer__subscription-section {
+        grid-row: 1 / span 2;
+        grid-column: span 2;
+        margin-top: 0;
+        margin-left: 31px;
+    }
+
+    .footer__subscription-form {
+        width: 384px;
+    }
+
+    .footer__contact-info {
+        grid-column: 1;
+        margin-top: 26px;
+    }
+
+    .footer__social-icons {
+        margin-top: 40px;
+        margin-bottom: 27px;
+    }
+
+    .footer__info-block {
+        flex-direction: row;
+        gap: 48px;
+        margin-top: 16px;
+    }
+
+    .main-article {
+        grid-template-rows: auto 54px 1fr 23px auto;
+        padding: 15px 20px 59px;
+    }
+
+    .article-content__title {
+        font-size: 48px;
+        line-height: 56px;
+    }
+
+    .article-content__info {
+        margin-top: 16px;
+    }
+
+    .article-content__content {
+        margin-top: 12px;
+    }
+
+    .article-content__subtitle-container {
+        gap: 20px;
+        margin-top: 36px;
+    }
+
+    .article-content__quote-container-first {
+        padding: 34px 24px 24px;
+    }
+
+    .article-content__quote-container-second {
+        align-items: center;
+        width: 485px;
+        margin: 0 auto;
+    }
+
+    .article-content__quote-container-second::before {
+        left: 141.5px;
+    }
+
+    .article-content__block-womanInGlasses-hands {
+        flex-direction: row;
+    }
+
+    .article-content__womanInWater-img {
+        height: 331px;
+        margin-top: 24px;
+    }
+
+    .article-content__walkingPeople-img {
+        height: 331px;
+    }
+
+    /* .article-content__womanInGlasses-img {
+        width: 294px;
+    } */
+
+    .article-content__hands-img {
+        width: 294px;
+        height: 182px;
+    }
+
+    .article-content__exercise-block {
+        padding: 24px;
+    }
+
+    .article-content__container-chair-sunset {
+        flex-direction: row;
+        gap: 16px;
+    }
+
+    .article-content__block-chair-sunset {
+        gap: 24px;
+    }
+
+    .aside-block {
+        grid-template-areas:
+            "service-Qlick psychologist-Lilia"
+            "service-Qlick psychologist-Lilia"
+            "give-care buy-sessions"
+            "give-care buy-sessions";
+        gap: 30px 16px;
+    }
+
+    .aside-block__service-Qlick {
+        padding: 22.55px 23px 14.45px;
+    }
+
+    .aside-block__psychologist-Lilia {
+        padding: 23px 52.5px 35px;
+    }
+
+    .aside-block__give-care {
+        min-height: 248px;
+    }
+
+    .aside-block__give-care_presents-img {
+        bottom: -35px;
+    }
+
+    .aside-block__buy-sessions {
+        padding: 23px 42.93px 3px 21.47px;
+    }
+
+    .aside-block__buy-sessions_presents-img {
+        right: 21.47px
+    }
 }
+
+
 
 
 /* iPad Pro 12.9 */
@@ -560,7 +1460,7 @@
         display: none;
     }
 
-    .header__menu {
+    .header__navigation {
         display: flex;
         /* flex: 1; */
     }
@@ -569,8 +1469,8 @@
         display: block;
     }
 
-    .main {
-        margin: 16px 32px 60px;
+    .main-blog {
+        margin: 15px 32px 60px;
     }
 
     .article:nth-child(-n+2) {
@@ -585,18 +1485,132 @@
         min-height: 458px;
     }
 
-    .main__btn-more-container {
+    .main-blog__btn-more-container {
         margin-top: 35px;
     }
 
     .footer {
-        padding: 40px 26px 17px 38px;
+        /* padding: 40px 26px 17px 38px; */
+        grid-template-columns: 38px 1fr 26px;
+        padding-top: 40px;
+        padding-bottom: 17px;
+    }
+
+    .footer__section {
+        grid-template-columns: repeat(4, auto);
+        grid-template-rows: 1fr;
+        margin-bottom: 24px;
     }
 
     .footer__menu {
         gap: 30px;
     }
+
+    .footer__subscription-section {
+        margin-left: 21px;
+        max-width: 450px;
+    }
+
+    .footer__contact-info {
+        grid-row: 1;
+        grid-column: 4;
+        margin-top: 0;
+        margin-left: 21px;
+    }
+
+    .main-article {
+        grid-template-columns: 1fr 24px auto;
+        grid-template-rows: auto 54px 1fr;
+        grid-template-areas:
+            "breadcrumb breadcrumb breadcrumb"
+            ". . ."
+            "article-content . aside-block";
+        padding: 15px 32px 71px;
+    }
+
+    .article-content__content {
+        margin-top: 24px;
+    }
+
+    .article-content__subtitle-container {
+        margin-top: 24px;
+    }
+
+    .article-content__quote-container-second::before {
+        left: 134.5px;
+    }
+
+    .article-content__block-womanInGlasses-hands {
+        gap: 24px;
+    }
+
+    .article-content__womanInGlasses-img {
+        width: 282px;
+    }
+
+    .article-content__hands-img {
+        width: 281px;
+        height: 174px;
+    }
+
+    .article-content__container-chair-sunset {
+        gap: 24px;
+    }
+
+    .aside-block {
+        grid-template-columns: 222px;
+        grid-template-rows: 495px 530px 292px 308px;
+        grid-template-areas:
+            "service-Qlick"
+            "psychologist-Lilia"
+            "give-care"
+            "buy-sessions";
+        gap: 24px;
+    }
+
+    .aside-block__service-Qlick {
+        padding: 24px 20px;
+    }
+
+    .aside-block__service-Qlick_img {
+        width: 181px;
+        height: 145px;
+    }
+
+    .aside-block__title {
+        min-height: 78px;
+    }
+
+    .aside-block__psychologist-Lilia {
+        padding: 23px 24px 16px;
+    }
+
+    .aside-block__give-care_text {
+        left: 0;
+        text-align: center;
+    }
+
+    .aside-block__give-care_firework-img {
+        width: 232px;
+        left: -5px;
+    }
+
+    .aside-block__give-care_presents-img {
+        width: 100%;
+        height: 280px;
+        bottom: 0;
+    }
+
+    .aside-block__buy-sessions {
+        padding: 23px;
+    }
+
+    .aside-block__buy-sessions_presents-img {
+        width: 100%;
+        right: 0;
+    }
 }
+
 
 
 
@@ -606,7 +1620,7 @@
         padding: 0 120px;
     }
 
-    .header__menu {
+    .header__navigation {
         margin-left: 51px;
     }
 
@@ -622,11 +1636,11 @@
         margin-left: 152px;
     }
 
-    .main {
-        margin: 16px 120px 96px;
+    .main-blog {
+        margin: 15px 120px 96px;
     }
 
-    .main__header {
+    .main-blog__header {
         margin-top: 30px;
     }
 
@@ -635,15 +1649,121 @@
         min-height: 475px;
     }
 
-    .main__btn-more-container {
+    .main-blog__btn-more-container {
         margin-top: 56px;
     }
 
     .footer {
-        padding: 40px 120px 17px;
+        /* padding: 40px 120px 17px; */
+        grid-template-columns: 120px 1fr 120px;
     }
 
     .footer__menu {
         gap: 93px;
+    }
+
+    .footer__subscription-section {
+        margin-left: 91.5px;
+    }
+
+    .footer__contact-info {
+        margin-left: 91.5px;
+    }
+
+    .main-article {
+        grid-template-columns: 1fr 228px auto;
+        grid-template-rows: auto 54px 1fr 1px 72px auto;
+        grid-template-areas:
+            "breadcrumb breadcrumb breadcrumb"
+            ". . ."
+            "article-content . aside-block"
+            "main-article__line main-article__line main-article__line"
+            ". . ."
+            "article-block article-block article-block";
+        padding: 15px 120px 158px;
+    }
+
+    .article-content__content {
+        width: 588px;
+    }
+
+    .article-content__list {
+        margin-top: 20px;
+    }
+
+    .article-content__hidden {
+        display: flex;
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    .article-content__quote-container-first {
+        margin-top: 40px;
+    }
+
+    .article-content__element-max-width {
+        width: 604px;
+    }
+
+    .article-content__filters {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px 8px;
+        margin-bottom: 48px;
+    }
+
+    .main-article__line {
+        display: flex;
+        width: 100%;
+        height: 1px;
+        /* margin-top: 48px; */
+        background-color: #DEDEDE;
+    }
+
+    .article-block {
+        display: block;
+    }
+
+    .aside-block {
+        grid-template-columns: 282px;
+        grid-template-rows: 512px 481px 292px 304px;
+    }
+
+    .aside-block__service-Qlick {
+        padding: 24px;
+    }
+
+    .aside-block__service-Qlick_img {
+        width: 257px;
+        height: 206px;
+    }
+
+    .aside-block__title {
+        min-height: 54px;
+    }
+
+    .aside-block__psychologist-Lilia {
+        padding: 23px 16px 35px;
+    }
+
+    .aside-block__give-care_text {
+        left: 30px;
+    }
+
+    .aside-block__give-care_firework-img {
+        width: 282px;
+        left: 0;
+    }
+
+    .aside-block__buy-sessions {
+        padding: 31px 56px 31px 32px;
+    }
+
+    .main-article__bigVector {
+        display: block;
+    }
+
+    .main-article__fullVector {
+        display: block;
     }
 }
